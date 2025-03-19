@@ -3,19 +3,19 @@
 ## Overview
 This is a **Java-based Inventory Management System** that allows users to:
 - Add, update, remove, and search for products.
-- Persist inventory data using a **text file (`inventory.txt`)**.
+- Persist inventory data using **serialization (`inventory.dat`)**.
 - Optimize search functionality for a smooth user experience.
 - Utilize **Object-Oriented Programming (OOP)** principles for structured product management.
 
 ## Features
 **Object-Oriented Design** – Uses a `Product` class to manage inventory records.  
-**File-Based Data Persistence** – Reads from and writes to `inventory.txt`.  
+**Data Persistence with Serialization** – Saves and loads inventory from `inventory.dat`.  
 **Optimized Search** – Find products by **ID** or **name**.  
 **User Input Validation** – Ensures valid data entry.  
 **Console-Based Interface** – Simple command-line interaction.
 
 ## How It Works
-1. **Run the program** (`InventoryApp.java`).
+1. **Run the program** (`Inventory.java`).
 2. Choose an option from the menu:
    - **Add Product**: Enter ID, name, price, and quantity.
    - **Update Product**: Modify the quantity of an existing product.
@@ -23,16 +23,12 @@ This is a **Java-based Inventory Management System** that allows users to:
    - **Search Product**: Find a product by ID or name.
    - **Display Inventory**: View all products in the inventory.
    - **Exit**: Close the program.
-3. The inventory is **automatically saved** in `inventory.txt`.
+3. The inventory is **automatically saved** in `inventory.dat` using **Java Object Serialization**.
 
-## File Format (`inventory.txt`)
-Products are stored in CSV format:
-```
-101,Laptop,999.99,5
-102,Mouse,19.99,20
-103,Keyboard,49.99,10
-```
-Each line represents a product with **ID, Name, Price, Quantity**.
+## Data Persistence (`inventory.dat`)
+- The inventory is stored in a **binary format** using **Java serialization**.
+- The program automatically **loads saved data** at startup and **updates `inventory.dat`** on every change.
+- Since it is a binary file, it cannot be read directly as plain text.
 
 ## Installation & Usage
 ### Prerequisites
@@ -40,12 +36,13 @@ Each line represents a product with **ID, Name, Price, Quantity**.
 
 ### Running the Project
 1. **Compile the program:**
-   ```bash
-   javac InventoryApp.java
+   ```
+   javac Inventory.java
    ```
 2. **Run the program:**
-   ```bash
-   java InventoryApp
    ```
+   java Inventory
+
+
 
 
